@@ -7,6 +7,7 @@ export const client = createClient();
 
 export const useWunderGraphClerk: Middleware = (useSWRNext) => {
 	const auth = useAuth();
+	console.log(auth.userId);
 
 	return useAuthMiddleware(useSWRNext, async () => {
 		return auth.getToken({ template: 'wundergraph' });
